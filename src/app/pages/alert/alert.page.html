@@ -1,0 +1,33 @@
+<app-header titulo="Alertas"></app-header>
+
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+       <ion-back-button
+          defaultHref="\home"
+          text="Regresar"
+          color="primary"
+          [mode]="'ios'"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>alert</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding" [fullscreen]="true">
+
+  <ion-button (click)="presentAlert()" expand="block">
+    Alert
+  </ion-button>
+
+  <ion-button (click)="presentAlertMultipleButtons()" expand="block">
+    Alert Multiple Buttons
+  </ion-button>
+
+  <ion-button (click)="presentAlertPrompt()" expand="block">
+    Alert Alert Prompt
+  </ion-button>
+
+
+</ion-content>

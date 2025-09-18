@@ -1,0 +1,25 @@
+<app-header titulo="Grid"></app-header>
+
+<ion-content class="ion-padding" fullscreen>
+  <ion-grid fixed> <!-- fixed: para que las columnas no se muevan -->
+    <ion-row>
+      <ion-col  size="12" size-lg="3" size-md="4" size-sm="6"
+                *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]"> <!-- size: para pantallas grandes, size-sm: para pantallas pequeñas, size-md: para pantallas medianas, size-lg: para pantallas grandes -->
+
+        <ion-card>
+          <ion-img src="\assets\luffy-img.jpg"></ion-img>
+        </ion-card>
+
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas, veniam necessitatibus quo dolor dignissimos tenetur facilis voluptatibus nesciunt obcaecati, autem consequuntur amet, ad labore nostrum itaque voluptatem quam voluptatum?
+        </ion-card-content>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

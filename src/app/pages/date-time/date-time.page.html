@@ -1,0 +1,99 @@
+<app-header titulo="DateTime"></app-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-list-header>
+      <ion-label>Datos de nacimiento</ion-label>
+    </ion-list-header>
+
+    <ion-item button="true" id="datetime">
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-label slot="end">{{fechaNaci.toISOString()}}</ion-label>
+    </ion-item>
+
+    <ion-modal trigger="datetime" [keepContentsMounted]="true">
+      <ng-template >
+        <ion-item>
+          <ion-label>Fecha de nacimiento</ion-label>
+          <ion-datetime
+            id="datetime"
+            presentation="date"
+            display-format="DD MMMM YYYY"
+            (ionChange)="cambiarFecha($event)"
+          ></ion-datetime>
+        </ion-item>
+      </ng-template>
+    </ion-modal >
+
+
+    <ion-list-header>
+      <ion-label>Restricciones</ion-label>
+    </ion-list-header>
+
+    <ion-item button="true" id="min-max-date">
+      <ion-label>Min y Max</ion-label>
+    </ion-item>
+
+    <ion-modal trigger="min-max-date" [keepContentsMounted]="true">
+      <ng-template >
+        <ion-item>
+          <ion-label>Años</ion-label>
+          <ion-datetime
+            min="2015"
+            max="2030">
+          </ion-datetime>
+        </ion-item>
+      </ng-template>
+    </ion-modal >
+
+    <ion-item button="true" id="datetime-year">
+      <ion-label>Años</ion-label>
+    </ion-item>
+
+    <ion-modal trigger="datetime-year" [keepContentsMounted]="true">
+      <ng-template >
+        <ion-item>
+          <ion-label>Años</ion-label>
+          <ion-datetime
+            presentation="year"
+            min="2015"
+            max="2030">
+          </ion-datetime>
+        </ion-item>
+      </ng-template>
+    </ion-modal >
+
+    <ion-item button="true" id="datetime-custom">
+      <ion-label>Custom options</ion-label>
+    </ion-item>
+
+    <ion-modal trigger="datetime-custom" [keepContentsMounted]="true" #customModal>
+      <ng-template>
+
+        <ion-header>
+          <ion-toolbar>
+            <ion-button slot="start" (click)="clickCancelCustom()">
+              Cancel
+            </ion-button>
+            <ion-button slot="end" (click)="clickConfirmCustom()">
+              Confirm
+            </ion-button>
+          </ion-toolbar>
+        </ion-header>
+
+       <ion-content>
+        <ion-item>
+          <ion-label>Custom options</ion-label>
+          <ion-datetime
+            (ionChange) ="dateSelected($event)"
+            [yearValues]="customYearsValues"
+          ></ion-datetime>
+        </ion-item>
+      </ion-content>
+
+      </ng-template>
+    </ion-modal >
+
+  </ion-list>
+</ion-content>

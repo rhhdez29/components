@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center" color="primary">avatar</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-avatar> <!--Creamo una imagen redondeada llamada avatar-->
+        <!-- <img src="\assets\luffy-img.jpg"/> -->
+      <ion-img src="/assets/luffy-img.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-chip color="primary" outline="true"
+  *ngFor="let item of [1,1,1,1,1]"> <!--Creamos un chip y lo repetimos 5 veces con ngFor-->
+    <ion-avatar>
+      <ion-img src="/assets/luffy-img.jpg"></ion-img>
+    </ion-avatar>
+    <ion-label>Default</ion-label>
+  </ion-chip>
+
+  <ion-list> <!--Creamos una lista de items-->
+    <ion-item *ngFor="let item of [1,1,1,1,1]"> <!--Repetimos el item 5 veces con ngFor-->
+      <ion-avatar slot="start"> <!--Creamo una imagen redondeada llamada avatar-->
+        <!-- <img src="\assets\luffy-img.jpg"/> -->
+        <ion-img src="/assets/luffy-img.jpg"></ion-img>
+      </ion-avatar>
+      <ion-label>Mokey D. Luffy</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+
+</ion-content>

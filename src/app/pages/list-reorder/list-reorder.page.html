@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-buttons>
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+    </ion-buttons>
+
+    <ion-title color="primary">list-reorder</ion-title>
+
+    <!--Boton Toggle-->
+    <ion-toggle slot="end" color="primary" [checked]="true" (ionChange)="toggle()" ></ion-toggle>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-reorder-group
+                        [disabled]="reorderDisabled"
+                        (ionItemReorder)="doReorder($event)"> <!--disable es para habilitar o deshabilitar la organizacion de los items y este usa una funcion del ts
+                                                                  usamos la funciondoRecorder para usar el $event que nos da ionItemReorder-->
+      <ion-item *ngFor="let personaje of pesonajes">
+        <ion-label>{{personaje}}</ion-label>
+        <ion-reorder slot="start">
+          <ion-icon name="logo-electron"></ion-icon>
+        </ion-reorder> <!--Pone el icono para ordenar al final-->
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+</ion-content>
