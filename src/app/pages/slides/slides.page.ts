@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-slides',
   templateUrl: './slides.page.html',
   styleUrls: ['./slides.page.scss'],
+  standalone: false
 })
 export class SlidesPage implements OnInit {
 
