@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, Pipe } from '@angular/core';
 import { Componente } from '../interfaces/intefaces';
+import { delay } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,10 @@ export class Data {
 
 
 getHeroes(){
-    return this.http.get<Componente[]>('/assets/data/superheroes.json');
-  }
+  return this.http.get<Componente[]>('/assets/data/superheroes.json');
+  .pipe{
+    delay(1500)
+  };
+}
 
 }
