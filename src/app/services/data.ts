@@ -22,4 +22,11 @@ export class Data {
   getMenuOpts(){
     return this.http.get<Componente[]>('/assets/data/menu-opciones.json');
   }
+
+
+
+getHeroes(){
+    return this.http.get<Componente[]>('/assets/data/superheroes.json');
+  }
+
 }
