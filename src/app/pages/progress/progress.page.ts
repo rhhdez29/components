@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+import { PopoverInfoComponent } from 'src/app/components/popover-info/popover-info.component';
 
 @Component({
   selector: 'app-progress',
@@ -8,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressPage implements OnInit {
 
-  constructor() { }
+  constructor(public popoverController: PopoverController) { }
 
   ngOnInit() {
   }
 
+  async presentPopover(e: Event) {
+    const popover = await this.popoverController.create({
+      component: PopoverInfoComponent,
+      event: e,
+    });
+
+    await popover.present();
+  }
 }
