@@ -1,13 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>search</ion-title>
+    <ion-title>Search</ion-title>
   </ion-toolbar>
+
+  <ion-searchbar 
+      placeholder="Buscar albúm" 
+      inputmode="text"
+      (ionChange)="onSearchChange( $event )"
+      [debounce]="250"
+      animated
+      
+    ></ion-searchbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">search</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-list>
+    <ion-item *ngFor="let album of albumes | filtro: textoBuscar:'title'">
+      <ion-label>{{ album.title }} </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
