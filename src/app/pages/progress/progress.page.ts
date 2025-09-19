@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+import { PopoverInfoComponent } from 'src/app/components/popover-info/popover-info.component';
 
 @Component({
   selector: 'app-progress',
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressPage implements OnInit {
 
+  porcentaje: number = 0.05;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  rangeChange( event : any ) {
+    this.porcentaje = event.detail.value / 100;
+  }
 }

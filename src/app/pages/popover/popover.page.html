@@ -5,13 +5,31 @@
     <ion-back-button color="primary" defaultHref="/"></ion-back-button>
    </ion-buttons>
     <ion-title color="primary">Popover</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">popover</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-button (click)="presentPopover($event)" expand="block" shape="round">
+    Click me
+  </ion-button>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button color="primary" (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
