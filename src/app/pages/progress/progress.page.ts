@@ -10,28 +10,14 @@ import { PopoverInfoComponent } from 'src/app/components/popover-info/popover-in
 })
 export class ProgressPage implements OnInit {
 
-<<<<<<< HEAD
   porcentaje: number = 0.05;
 
   constructor() { }
-=======
-  constructor(public popoverController: PopoverController) { }
->>>>>>> 7faadb7c2501cd2252600e06e81362cbe03b43f4
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
   rangeChange( event : any ) {
     this.porcentaje = event.detail.value / 100;
-=======
-  async presentPopover(e: Event) {
-    const popover = await this.popoverController.create({
-      component: PopoverInfoComponent,
-      event: e,
-    });
-
-    await popover.present();
->>>>>>> 7faadb7c2501cd2252600e06e81362cbe03b43f4
   }
 }
