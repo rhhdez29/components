@@ -15,7 +15,7 @@ superHeroes!: Observable<any>;
   constructor(private dataService:Data ) {}
 
   ngOnInit() {
-this.superHeroes = this.dataService.getHeroes();
+    this.superHeroes = this.dataService.getHeroes();
 
   }
 

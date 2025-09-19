@@ -31,23 +31,21 @@
 
 
 
-<ion-list *ngFor="let heroe of superHeroes | async">
-  <ion-item>
-    <ion-label>
-
-<h3>(heroe.superhero) <small>(heroe.alter-ego)</small></h3>
-
-<p>
-  (heroe.first_appearance)
-</p>
+  <ion-list *ngFor="let heroe of superHeroes | async">
+    <ion-item>
+      <ion-label>
+        <h3>{{heroe.superhero}} <small>{{heroe.alter_ego}}</small></h3>
+        <p>
+          {{heroe.first_appearance}}
+        </p>
 
 
-    </ion-label>
+      </ion-label>
 
 
-<ion-label slot="end"class="ion-text-right">(heroe.publisher)</ion-label>
+      <ion-label slot="end"class="ion-text-right">{{heroe.publisher}}</ion-label>
 
-  </ion-item>
-</ion-list>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
