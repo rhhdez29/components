@@ -11,7 +11,9 @@ import { IonList, IonLabel } from "@ionic/angular/standalone";
 })
 export class SegmentPage implements OnInit {
 
-superHeroes!: Observable<any>;
+  superHeroes!: Observable<any>;
+  publisher: string = 'todos';
+
   constructor(private dataService:Data ) {}
 
   ngOnInit() {
@@ -20,8 +22,12 @@ superHeroes!: Observable<any>;
   }
 
    segmentChanged(event:any){
-    console.log(event.detail.value);
-
+   //console.log(event.detail.value);
+   /*if(event.detail.value === 'todos'){
+    this.publisher = '';
+    return;
+   }*/
+    this.publisher = event.detail.value;
   }
 
 }

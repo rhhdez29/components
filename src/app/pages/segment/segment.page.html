@@ -1,26 +1,26 @@
 <ion-header>
   <ion-toolbar>
 
-<ion-buttons slot="start">
-  <ion-back-button defaultHref="/"color="primary"></ion-back-button>
-</ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"color="primary"></ion-back-button>
+    </ion-buttons>
 
-  <ion-title color="primary">segment</ion-title>
+    <ion-title color="primary">segment</ion-title>
   </ion-toolbar>
 
-<ion-segment value="pasta" (ionChange)="segmentChanged($event)">
+  <ion-segment value="" (ionChange)="segmentChanged($event)">
 
-  <ion-segment-button value="todos">
-    <ion-label>Todos</ion-label>
-  </ion-segment-button>
+    <ion-segment-button value="">
+      <ion-label>Todos</ion-label>
+    </ion-segment-button>
 
-    <ion-segment-button value="DC Comic">
-    <ion-label>DC Comic</ion-label>
+    <ion-segment-button value="DC Comics">
+    <ion-label>DC Comics</ion-label>
     </ion-segment-button>
 
 
- <ion-segment-button value="Marvel Comics">
-    <ion-label>Marvel Comics </ion-label>
+    <ion-segment-button value="Marvel Comics">
+      <ion-label>Marvel Comics </ion-label>
     </ion-segment-button>
 
  </ion-segment>
@@ -31,7 +31,7 @@
 
 
 
-  <ion-list *ngFor="let heroe of superHeroes | async">
+  <ion-list *ngFor="let heroe of ( superHeroes | async) | filtro:publisher:'publisher' ">
     <ion-item>
       <ion-label>
         <h3>{{heroe.superhero}} <small>{{heroe.alter_ego}}</small></h3>
