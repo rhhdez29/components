@@ -26,11 +26,11 @@ export class Data {
 
 
 
-getHeroes(){
-  return this.http.get<Componente[]>('/assets/data/superheroes.json')
-  .pipe(
-    delay(1500)
-  );
+  getHeroes(){
+    return this.http.get<Componente[]>('/assets/data/superheroes.json')
+    .pipe(
+      delay(1500)
+    );
 }
 
 }

@@ -1,0 +1,54 @@
+swiper-slide {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  flex-direction: column;
+  gap: 16px; 
+}
+
+swiper-slide {
+  overflow: visible !important;
+}
+
+.slide-full {
+    height: 100% !important;
+}
+
+ion-card {
+    overflow: unset !important;
+}
+
+ion-card {
+    height: 200px;
+    width: 300px;
+    overflow: visible !important; /* permitir que sobresalga */
+    
+}
+
+.slide-image {
+  width: 100px;
+  display: block;
+  /*margin: 0 auto 20px auto;  centrada y con espacio abajo */
+}
+
+ion-card-header {
+    position: static;
+    //top: -50px;
+}
+
+ion-card-content {
+    position: static;
+    //top: -50px;
+}
+
+.avatar {
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slide-card {
+    width: 300px;
+    text-align: center;
+}
