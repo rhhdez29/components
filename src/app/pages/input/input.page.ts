@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class InputPage implements OnInit {
 
-  nombre: string = 'Fernando';
+  nombre: string = 'Dulce';
 
   usuario = {
     email: '',
